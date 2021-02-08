@@ -14,11 +14,10 @@ const displayMeals = meals => {
 }
 
 function searchMeal() {
-    const name = document.getElementById('searchItem').value;
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
-        .then(response => response.json())
+        const name = document.getElementById('search').value;
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+        .then(res => res.json())
         .then(data => {
-            //  console.log(data.meals)
             displayMeals(data.meals);
         });
 }
@@ -48,7 +47,7 @@ const displayIngredient = meal => {
 const mealDetail = id => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     fetch(url)
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             console.log(data.meals[0]);
             displayIngredient(data.meals[0]);
