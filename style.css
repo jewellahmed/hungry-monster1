@@ -1,83 +1,38 @@
-#meals{
+#searchBox {
+    margin-top: 5%;
+    height: 50px;
+}
 
+#meals {
+    background-color: white;
+    margin-top: 5%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 30px;
-    margin-top: 40px;
-    margin-left: 40px;
-    
-
-
-
+    grid-template-columns: repeat(4, 2fr);
+    grid-gap: 15px;
 }
 
-
-
-
-
-.meal{
-
-    border: 1px solid goldenrod;
-    border-radius: 20px;
-    padding: 20px;
+.meal {
+    border-radius: 10px;
     text-align: center;
-    width : 300px;
-
-
-
-
-
-}
-.meal img{
-
     width: 250px;
-
-
-
-
+    background-color: rgb(238, 238, 238);
 }
 
+.meal img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
+.allItem {
+    margin-left: 25%;
+}
 
-
-
-
-
-* {
-    box-sizing: border-box;
-  }
-  
-  /* Style the search field */
-  form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
-  
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-  }
-  
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
+.meal ul, h4 {
+    padding-left: 8%;
+    text-align: left;
+    font-size: 1rem;
+}
+.meal li{
+    font-size: small;
+}
