@@ -1,32 +1,16 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
-.then(res => res.json())
-.then(data => displayMeals(data));
+const urlMeal = `https://www.themealdb.com/api/json/v1/1/search.php?s=`
+    fetch(urlMeal)
+    .then(res => res.json())
+    .then(data => displayMeals(data.meals));
 
     
-
  const displayMeals = meals => {
 
         const mealsDiv  = document.getElementById('meals');
-        meals.meals.forEach( meal => {
-            const inputMeal = document.getElementById('input');
-            const mealName = inputMeal.placeholder;
-            console.log(mealName);
-            if(mealName === meal.strMeal){
-            
+        meals.forEach(meal => {
+           
+       
            
             const mealDiv = document.createElement('div');     
      
@@ -43,31 +27,29 @@ fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
            mealDiv.innerHTML = mealInfo;
      
            mealsDiv.appendChild(mealDiv);
-        }
-        else{
-            console.log('error');
-        }
+
     });
 
-
-    }
+ }
+    
    
     const displayDetail = strMeal => {
         
         const url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${strMeal}`
         
+        
         fetch(url)
         console.log(url)
         .then(res => res.json()) 
-        .then(data => renderMealInfo(data));
-       // console.log(data);
+        .then(data => renderMealInfo(data.meal));
+      // console.log(data.meal);
        
 
     }
     
         
     const renderMealInfo = meal => {
-       //console.log(meal);
+      //console.log(meal);
       // console.log(strMeal);
       //console.log(strMeal);
 
@@ -84,4 +66,3 @@ fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
         `
 
     }
-
